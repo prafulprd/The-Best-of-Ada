@@ -1,0 +1,175 @@
+/* navigation */
+
+{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+nav{
+	grid-area: nav;
+	display: flex;
+	/*flex-flow: row wrap; */
+	justify-content: space-around;
+	align-items: center;
+	min-height: 7vh;
+	background-color: #231F20;
+	font-family: 'Playfair Display', serif;
+	color: #EFE6DD;
+	/*width: 100%;
+  	height: 100px;
+  	padding: 10px;*/
+
+}
+
+.logo{
+	display: flex;
+	color: #EFE6DD;
+	text-transform: uppercase;
+	letter-spacing: 8px;
+	font-size: 15px;
+}
+
+nav a{
+  float: right;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-links{
+	display: flex;
+	justify-content: space-around;
+	
+}
+
+.nav-links li{
+	list-style: none;
+	position: relative;
+}
+
+.nav-links a{
+	color: #EFE6DD;
+	text-decoration: none;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-size: 16px;
+} 
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 21px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+nav a:hover, .dropdown:hover .dropbtn {
+  background-color: #BB4430;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #363031;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: #EFE6DD;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #BB4430;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.burger{
+	display: none;
+	cursor: pointer;
+}
+	
+.burger div{
+	width: 25px;
+	height: 3px;
+	background-color: #EFE6DD;
+	margin: 5px;
+	transition: all 0.5s ease;
+}
+
+
+/*@media screen and (max-width: 1024px){
+	.nav-links{
+	width: 60%;
+	}
+} */
+
+@media screen and (max-width: 768px){
+	body{
+		overflow-x: hidden;
+	}
+	.nav-links{
+		position: absolute;
+		right: 0px;
+		height: 92vh;
+		top: 7vh;
+		background-color: #363031;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 50%;
+		transform: translateX(100%);
+		transition: transform 0.5s ease-in;
+	}
+	.nav-links li{
+		opacity: 0;
+	}
+	.burger{
+		display: block;
+}
+
+.nav-active{
+	transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+	from{
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+.toggle .line1{
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+	opacity: 0;
+}
+.toggle .line3{
+	transform: rotate(45deg) translate(-5px, -6px);
+}
